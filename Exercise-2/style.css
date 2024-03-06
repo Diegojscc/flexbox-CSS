@@ -8,9 +8,147 @@
     color: #fff;
     background-color: #5995DA;  /* Blue */
     padding: 20px 0;
+    /*....*/
+    display: flex;
+    justify-content: center;
   }
   
   .menu {
-    border: 1px solid #fff;  /* For debugging */
     width: 900px;
+    /*.....*/
+    display: flex;
+    justify-content: space-between;
   }
+
+  .login {
+    margin-left: 20px;
+  }
+
+  .signup {
+    margin-left: auto; /* Con esto conseguimos que "Sing Up y Login"
+    se rueden a la derecha del todo. Lo que simplifica el html
+    ya que no es necesario meter estos dos articulos dentro de otro
+    div para modificar su posicion como hicimos anteriormente.*/
+  }
+  /*
+  JUSTIFY-CONTENT: Colocar elementos horizontalmente
+  ALIGN-ITEMS: Colocar elementos verticalmente.
+  */
+
+  .header-container {
+    color: #5995DA;
+    background-color: #D6E9FE;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .header {
+    width: 900px;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /*  PARA CREAR UNA CUADRILLA PODEMOS UTILIZAR LA 
+  PROPIEDAD FLEX-WRAP*/
+
+  .photo-grid-container {
+    display: flex;
+    justify-content: center;
+  }
+  .photo-grid {
+    width: 900px;
+    display: flex;
+    align-items: center; /*Para centrar horizontalmente 
+    al aplicar flex-direction: column;*/
+    flex-direction: column;
+    justify-content: center;/*Podemos jugar con esta 
+    propiedad para decirle como colocar a los objetos
+    que estaban desbordados*/
+    flex-wrap: wrap; /*Con esto solucionamos el desbordamiento*/
+    flex-direction: row;
+  }
+  .photo-grid-item {
+    border: 10px solid #fff;
+    width: 300px;
+    height: 400px;
+  }
+  /*Si ponemos mas fotos en este caso de los que caben en la 
+  pantalla, estos no se veran o quedaran cortados.*/
+
+  /*Ahora vamos a modificar el orden individualmente de los 
+  items*/
+  .first-item {
+    order: 1;
+  }
+  .last-item {
+    order: -1;
+  }
+
+  /*Alinear item individualmente con ALIGN-SELF*/
+  .social, .subscribe {
+    align-self: flex-end;
+    margin-bottom: 20px;
+  }
+
+
+  /*
+  FOOTER
+  
+  La propiedad FLEX define la anchura de los articulos
+  individuaes en un contenedor flexible.
+  EJ: Un articulo con valor flex: 2; crecerea el doble de 
+  rapido que los elementos con el valor por defecto de 1.
+  */
+
+  .footer {
+    display: flex;
+    justify-content: space-between;
+  }
+  .footer-item {
+    border: 1px solid #fff;
+    background-color: #D6E9FE;
+    height: 200px;
+    flex: 1;/*Al poner esta propiedad se muestra el footer, sino 
+    tendriamos que poner width.*/
+  }
+  /*
+    La propiedad CSS flex es una propiedad resumida que 
+    indica la capacidad de un elemento flexible para 
+    alterar sus dimensiones y llenar el espacio 
+    disponible. Los elementos flexibles pueden ser 
+    estirados para utilizar el espacio disponible 
+    proporcional a su factor de crecimiento flexible o 
+    su factor de contracción flexible para evitar 
+    desbordamiento.
+    https://developer.mozilla.org/es/docs/Web/CSS/flex
+  */
+
+  .footer-three {
+    flex: 2; /*Va a crecer el doble que los otros elementos*/
+  }
+
+  /*FLEX: INITIAL; Le da prioridad al width, convierte a 
+  los articulos en estaticos, el ancho no cambia independientemente 
+  del tamaño del contenedor.*/
+  .footer-one, .footer-three {
+    background-color: #5995DA;
+    flex: initial;
+    width: 300px;
+  }
+
+  /*
+  RESUMEN
+
+  
+    ·Uso display: flex;para crear un contenedor flexible.
+    ·Uso justify-contentdefinir la alineación horizontal de los elementos.
+    ·Uso align-itemsdefinir la alineación vertical de los elementos.
+    ·Uso flex-directionsi necesita columnas en vez de filas.
+    ·Utilícese el row-reverseo o column-reversevalores para voltear el orden de elementos.
+    ·Uso orderpara personalizar el orden de elementos individuales.
+    ·Uso align-selfalinear verticalmente elementos individuales.
+    ·Uso flexpara crear cajas flexibles que puedan estirar y encose.
+
+  */
